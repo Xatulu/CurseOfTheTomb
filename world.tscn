@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dht7gv0e0unwm"]
 
 [ext_resource type="Texture2D" uid="uid://24ugriym16uo" path="res://assets/sprites/curseofthetomb_environment_tileset.png" id="1_82uj8"]
-[ext_resource type="PackedScene" uid="uid://bj76xeewikwx0" path="res://entities/player.tscn" id="2_owbs1"]
+[ext_resource type="PackedScene" uid="uid://bj76xeewikwx0" path="res://entities/player/player.tscn" id="2_owbs1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kqjw8"]
 texture = ExtResource("1_82uj8")

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://csfi5sseyrfdo"]
+
+[ext_resource type="PackedScene" uid="uid://cwfokuaqawsxa" path="res://utilities/State.tscn" id="1_iyma4"]
+
+[sub_resource type="CSharpScript" id="CSharpScript_6l48n"]
+script/source = "using Godot;
+using System;
+
+public partial class JumpState : State
+{
+}
+"
+
+[node name="Jump" instance=ExtResource("1_iyma4")]
+script = SubResource("CSharpScript_6l48n")

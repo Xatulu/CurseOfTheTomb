@@ -1,10 +1,15 @@
-[gd_scene load_steps=13 format=3 uid="uid://bj76xeewikwx0"]
+[gd_scene load_steps=18 format=3 uid="uid://bj76xeewikwx0"]
 
-[ext_resource type="Script" path="res://entities/Player.cs" id="1_w6jn7"]
+[ext_resource type="Script" path="res://entities/player/Player.cs" id="1_w6jn7"]
 [ext_resource type="Texture2D" uid="uid://bvr3ajl3ohrkk" path="res://assets/sprites/player_spritesheet.png" id="2_s3bg4"]
 [ext_resource type="PackedScene" uid="uid://b7pggq4cqsqk1" path="res://utilities/extended_audio_stream_player.tscn" id="3_d3oym"]
 [ext_resource type="AudioStream" uid="uid://qqvua2he8o0k" path="res://assets/sounds/footstep_1.wav" id="4_owhaj"]
 [ext_resource type="AudioStream" uid="uid://ct1h53sp4a3v1" path="res://assets/sounds/jump.wav" id="5_neifm"]
+[ext_resource type="Script" path="res://utilities/StateMachine.cs" id="6_nejtd"]
+[ext_resource type="Script" path="res://entities/player/player_idle.cs" id="7_62l44"]
+[ext_resource type="Script" path="res://entities/player/player_run.cs" id="8_wc8o8"]
+[ext_resource type="Script" path="res://entities/player/player_jump.cs" id="9_stbjk"]
+[ext_resource type="Script" path="res://entities/player/player_fall.cs" id="10_0kdjy"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pmxsk"]
 radius = 70.0
@@ -168,3 +173,18 @@ pitch_scale = 2.0
 [node name="Jump" parent="Sounds" instance=ExtResource("3_d3oym")]
 stream = ExtResource("5_neifm")
 volume_db = -4.0
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("6_nejtd")
+
+[node name="Idle" type="Node" parent="StateMachine"]
+script = ExtResource("7_62l44")
+
+[node name="Run" type="Node" parent="StateMachine"]
+script = ExtResource("8_wc8o8")
+
+[node name="Jump" type="Node" parent="StateMachine"]
+script = ExtResource("9_stbjk")
+
+[node name="Fall" type="Node" parent="StateMachine"]
+script = ExtResource("10_0kdjy")
